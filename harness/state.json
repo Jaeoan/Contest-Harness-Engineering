@@ -1,0 +1,70 @@
+{
+  "msitarzewski/agency-agents": {
+    "commit": "68f01534ef30805ed3764f2d302ad03fe443707a",
+    "commit_msg": "fix(install): Hermes plugin actually gets enabled on real Hermes configs (#881)"
+  },
+  "anthropics/skills": {
+    "commit": "33375500bcea98d610eb30ce10ac4e59b89c390d",
+    "commit_msg": "Update claude-api skill: link refusal billing to the docs (#1825)"
+  },
+  "anthropics/claude-code": {
+    "release": "v2.1.283",
+    "release_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283"
+  },
+  "pbakaus/impeccable": {
+    "commit": "9d715cc4f5564a990ca8345abfdd5df6dc9b41c8",
+    "commit_msg": "Keep skill-behavior advice checks from splitting sentences at filenames (#855)"
+  },
+  "Leonxlnx/taste-skill": {
+    "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+    "commit_msg": "Merge pull request #125 from Leonxlnx/cursor/add-anthonyliuva-community-sponsor-56db"
+  },
+  "microsoft/playwright-mcp": {
+    "release": "v0.0.82",
+    "release_url": "https://github.com/microsoft/playwright-mcp/releases/tag/v0.0.82"
+  },
+  "tailwindlabs/tailwindcss": {
+    "release": "v4.3.3",
+    "release_url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.3"
+  },
+  "facebook/react": {
+    "release": "v19.3.0",
+    "release_url": "https://github.com/react/react/releases/tag/v19.3.0"
+  },
+  "piomin/claude-ai-spring-boot": {
+    "commit": "d87e7a38588a0a945ae2c11a251954897692330e",
+    "commit_msg": "Merge pull request #16 from Ramir0/patch-1"
+  },
+  "rrezartprebreza/spring-boot-skills": {
+    "commit": "f0c06a01b0b7571b519cd43e16692b2483a24514",
+    "commit_msg": "Merge branch 'codex/skill-quality-and-verification'"
+  },
+  "spring-projects/spring-boot": {
+    "release": "v4.1.1",
+    "release_url": "https://github.com/spring-projects/spring-boot/releases/tag/v4.1.1"
+  },
+  "nimrodfisher/data-analytics-skills": {
+    "commit": "9449d363e1ae43cf1706c73bebc16774e339c427",
+    "commit_msg": "Update README.md"
+  },
+  "K-Dense-AI/claude-scientific-skills": {
+    "commit": "065b734670d7d990627dbc06a05b5a99be33f1f1",
+    "commit_msg": "chore: update security scan report [skip ci]"
+  },
+  "probabl-ai/skills": {
+    "commit": "b5bab239cb6350ee9e3fa75d6ef693729b37cb7a",
+    "commit_msg": "feat: Show status of the workspace and to reset some of the choices (#131)"
+  },
+  "HKUDS/LightRAG": {
+    "release": "v1.5.7",
+    "release_url": "https://github.com/HKUDS/LightRAG/releases/tag/v1.5.7"
+  },
+  "infiniflow/ragflow": {
+    "release": "v0.27.2",
+    "release_url": "https://github.com/infiniflow/ragflow/releases/tag/v0.27.2"
+  },
+  "explodinggradients/ragas": {
+    "release": "v0.4.3",
+    "release_url": "https://github.com/vibrantlabsai/ragas/releases/tag/v0.4.3"
+  }
+}
