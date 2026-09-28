@@ -1,0 +1,8 @@
+# harness-curator(자동 모드)가 수정할 수 없는 경로. 사람만 수정.
+CLAUDE.md
+harness/protected.txt
+.claude/settings.json
+.claude/hooks/
+.claude/skills/frontend-stack-lock/SKILL.md
+scripts/validate_harness.py
+.github/workflows/

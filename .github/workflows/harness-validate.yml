@@ -1,0 +1,23 @@
+name: harness-validate
+on:
+  pull_request:
+    paths: [".claude/**", "CLAUDE.md", "harness/**", "scripts/**"]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 scripts/validate_harness.py
+      - name: Protected files untouched by bot
+        if: startsWith(github.head_ref, 'harness/auto-')
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth 1
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          fail=0
+          while read -r p; do
+            [ -z "$p" ] || [[ "$p" == \#* ]] && continue
+            echo "$changed" | grep -q "^${p}" && { echo "::error::protected path changed: $p"; fail=1; }
+          done < harness/protected.txt
+          exit $fail

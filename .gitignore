@@ -1,0 +1,12 @@
+vendor/
+data/raw/
+.env
+.env.*
+node_modules/
+frontend/dist/
+backend/build/
+.gradle/
+__pycache__/
+.ipynb_checkpoints/
+harness/pending_changes.json
+harness/cron.log

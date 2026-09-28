@@ -1,0 +1,22 @@
+{
+  "_doc": "매시간 감시할 소스. watch: commits(기본 브랜치 최신 커밋, path로 범위 제한 가능) / releases(최신 릴리스 태그). team은 영향받는 팀.",
+  "repos": [
+    {"repo": "msitarzewski/agency-agents", "watch": ["commits"], "team": "all", "why": "에이전트 페르소나·프로세스 원본"},
+    {"repo": "anthropics/skills", "watch": ["commits"], "team": "all", "why": "공식 스킬(frontend-design 등)"},
+    {"repo": "anthropics/claude-code", "watch": ["releases"], "path": "CHANGELOG.md", "team": "harness", "why": "에이전트/훅/스케줄 기능 변경"},
+    {"repo": "pbakaus/impeccable", "watch": ["commits"], "team": "design", "why": "UI 품질 패스 규칙"},
+    {"repo": "Leonxlnx/taste-skill", "watch": ["commits"], "team": "design", "why": "anti-slop 디자인 취향"},
+    {"repo": "microsoft/playwright-mcp", "watch": ["releases"], "team": "frontend", "why": "visual-qa 도구"},
+    {"repo": "tailwindlabs/tailwindcss", "watch": ["releases"], "team": "frontend", "why": "고정 스택 버전 추적"},
+    {"repo": "facebook/react", "watch": ["releases"], "team": "frontend", "why": "고정 스택 버전 추적"},
+    {"repo": "piomin/claude-ai-spring-boot", "watch": ["commits"], "team": "backend", "why": "Claude Code용 Spring 템플릿"},
+    {"repo": "rrezartprebreza/spring-boot-skills", "watch": ["commits"], "team": "backend", "why": "Spring REST/JPA 스킬"},
+    {"repo": "spring-projects/spring-boot", "watch": ["releases"], "team": "backend", "why": "Boot 버전 추적"},
+    {"repo": "nimrodfisher/data-analytics-skills", "watch": ["commits"], "team": "data", "why": "분석 워크플로 스킬"},
+    {"repo": "K-Dense-AI/claude-scientific-skills", "watch": ["commits"], "team": "data", "why": "ML·지리공간·통계 스킬"},
+    {"repo": "probabl-ai/skills", "watch": ["commits"], "team": "data", "why": "ML 파이프라인 방법론"},
+    {"repo": "HKUDS/LightRAG", "watch": ["releases"], "team": "data", "why": "그래프 RAG"},
+    {"repo": "infiniflow/ragflow", "watch": ["releases"], "team": "data", "why": "문서 파싱 RAG"},
+    {"repo": "explodinggradients/ragas", "watch": ["releases"], "team": "data", "why": "RAG 평가"}
+  ]
+}
