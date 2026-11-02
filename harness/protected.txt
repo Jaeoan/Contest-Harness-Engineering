@@ -1,4 +1,4 @@
-# harness-curator(자동 모드)가 수정할 수 없는 경로. 사람만 수정.
+# 사용자가 직접 승인하지 않으면 harness-curator가 수정할 수 없는 경로.
 CLAUDE.md
 harness/protected.txt
 .claude/settings.json

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PreToolUse 훅: 고정 스택 위반과 보호 파일 수정을 차단한다.
+"""PreToolUse 훅: 고정 스택 위반을 차단한다.
 exit 2 → 도구 호출 차단, stderr 메시지가 Claude에게 전달된다."""
 import json
 import os
@@ -17,15 +17,8 @@ INSTALL_RE = re.compile(r"\b(npm\s+(i|install|add)|pnpm\s+(add|i|install)|yarn\s
 
 
 def block(msg: str) -> None:
-    print(f"[guard-stack] 차단: {msg}\n고정 스택(TypeScript+React+Tailwind)과 harness/protected.txt 규칙은 CLAUDE.md 0절 참고.", file=sys.stderr)
+    print(f"[guard-stack] 차단: {msg}\n고정 스택(TypeScript+React+Tailwind) 규칙은 CLAUDE.md 0절 참고.", file=sys.stderr)
     sys.exit(2)
-
-
-def protected_paths(root: Path) -> list[str]:
-    f = root / "harness" / "protected.txt"
-    if not f.exists():
-        return []
-    return [l.strip() for l in f.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
 
 
 def main() -> None:
@@ -51,11 +44,6 @@ def main() -> None:
         rel = Path(path).resolve().relative_to(root.resolve()).as_posix()
     except ValueError:
         rel = path
-
-    if os.environ.get("HARNESS_AUTO") == "1":
-        for p in protected_paths(root):
-            if rel == p or (p.endswith("/") and rel.startswith(p)):
-                block(f"자동 모드에서 보호 파일 수정 불가: {rel} → harness/proposals.md에 제안으로 작성하세요.")
 
     if rel.startswith("frontend/src/") and rel.endswith((".js", ".jsx")):
         block(f"프론트엔드 소스는 .ts/.tsx만 허용: {rel}")

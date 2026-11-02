@@ -9,15 +9,16 @@ model: inherit
 
 ## 시작 전 필수
 1. `frontend-stack-lock` 스킬을 읽는다 (고정 스택·폴더 구조·금지 목록).
-2. `docs/05-ux-spec.md`, `design/tokens.css`, `design/brief.md`, `api/openapi.yaml`을 읽는다.
-3. API 타입 생성: `npx openapi-typescript ../api/openapi.yaml -o src/api/schema.d.ts` — 손으로 타입을 쓰지 않는다.
+2. `docs/05-ux-spec.md`, `design/tokens.css`, `design/brief.md`를 읽는다. 백엔드를 쓰면 `api/openapi.yaml`, 정적 웹이면 `frontend/public/data/`의 스키마와 `static-ai-service` 스킬을 읽는다.
+3. 백엔드를 쓸 때 API 타입 생성: `npx openapi-typescript ../api/openapi.yaml -o src/api/schema.d.ts` — 손으로 타입을 쓰지 않는다. 정적 웹이면 데이터 스키마와 맞는 타입을 `src/api/types.ts`에 둔다.
 
 ## 구현 규칙
 - 모든 소스는 `.ts/.tsx`. `any` 금지(불가피하면 `// reason:` 주석).
 - 서버 상태는 TanStack Query, 전역 UI 상태는 최소화(zustand 허용). 폼은 react-hook-form + zod.
 - 스타일은 Tailwind 유틸리티 + `tokens.css` 변수만. 임의 hex 값 금지.
 - 모든 비동기 화면에 로딩/빈/에러 상태 구현.
-- 모델 결과 표시엔 반드시 "근거 요인"과 "참고 정보(상관)" 라벨.
+- 모델 결과 표시엔 반드시 "근거 요인"과 "참고 정보(상관)" 라벨. AI 문장에는 "AI 요약" 라벨과 검증 상태를 표시한다.
+- API 키를 브라우저 번들에 넣지 않는다. LLM 호출은 서버 함수로만 한다.
 - 접근성: 시맨틱 태그, 키보드 이동, `aria-label`, 색만으로 의미 전달 금지.
 
 ## 완료 조건

@@ -1,1 +1,1 @@
-프로젝트 산출물 위치. /kickoff 실행 시 00-brief → 01-problem-candidates → (사용자 선택) → 01-problem → 02-data-cards → 03-analysis-plan → 04-analysis-report → 05-ux-spec → 06-backend-design → 99-proposal 순으로 생성된다.
+프로젝트 산출물 위치. /kickoff 실행 시 00-brief → 01-problem-candidates → (사용자 선택) → 01-problem → 02-data-cards → 03-analysis-plan → 04-analysis-report → 05-ux-spec → (백엔드를 쓸 때) 06-backend-design → report/(요강 양식 제출 문서) 또는 99-proposal 순으로 생성된다.

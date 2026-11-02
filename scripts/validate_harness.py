@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""하네스 무결성 검사. 자동 업데이트 PR과 CI에서 실행. 실패 시 exit 1."""
+"""하네스 무결성 검사. 하네스를 고친 뒤와 PR CI에서 실행. 실패 시 exit 1."""
 import json
 import re
 import sys
@@ -65,12 +65,6 @@ try:
                         errors.append(f"settings.json: 훅 파일 없음 {m}")
 except Exception as e:
     errors.append(f"settings.json: {e}")
-try:
-    for r in json.loads((ROOT / "harness/sources.json").read_text())["repos"]:
-        assert re.fullmatch(r"[\w.-]+/[\w.-]+", r["repo"]), r
-        assert set(r["watch"]) <= {"commits", "releases"}, r
-except Exception as e:
-    errors.append(f"sources.json: {e}")
 
 # 5) 보호 목록 경로 존재
 for line in (ROOT / "harness/protected.txt").read_text(encoding="utf-8").splitlines():

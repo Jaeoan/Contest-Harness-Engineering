@@ -18,7 +18,7 @@ description: 프론트엔드 고정 스택(TypeScript + React + Tailwind CSS) �
 
 ## 금지
 Vue/Angular/Svelte/Solid, styled-components/emotion/CSS Modules 남용, Bootstrap/MUI/Chakra/Ant Design, jQuery, `.js/.jsx` 소스, 인라인 hex 색상, `any` 남발.
-(`.claude/hooks/guard-stack.sh`가 package.json과 파일 확장자를 검사해 차단한다.)
+(`.claude/hooks/guard_stack.py`가 package.json과 파일 확장자를 검사해 차단한다.)
 
 ## 폴더 구조
 ```
